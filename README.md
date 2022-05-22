@@ -11,3 +11,5 @@ Laravel ile Geliştirilen İçerik Yönetim Sistemli Blog Scripti
 - Kategori Ekleme / Silme / Güncelleme / Aktif-Pasif Yapma
 - Yazı Ekleme / Silme / Güncelleme / Aktif-Pasif Yapma
 
+
+-the

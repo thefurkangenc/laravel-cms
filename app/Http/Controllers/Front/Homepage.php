@@ -32,7 +32,7 @@ class Homepage extends Controller
     {
         $data['articles'] = Article::with('getCategory')->whereHas('getCategory',function($query){
             $query->where('status',1);
-        })->whereStatus(1)->orderBy('created_at', 'DESC')->paginate(10);
+        })->whereStatus(1)->orderBy('created_at', 'DESC')->paginate(6);
 
         return view('front.homepage', $data);
     }
@@ -51,7 +51,7 @@ class Homepage extends Controller
     public function category($slug)
     {
         $category = Category::whereStatus(1)->whereSlug($slug)->first() ?? abort(403, 'Böyle Bir Katego Bulunamadı');
-        $articles = Article::whereStatus(1)->whereCategory($category->id)->orderBy('created_at', 'DESC')->paginate(1);
+        $articles = Article::whereStatus(1)->whereCategory($category->id)->orderBy('created_at', 'DESC')->paginate(6);
         $data['articles'] = $articles;
         $data['category'] = $category;
         return view('front.category', $data);
